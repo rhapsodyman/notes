@@ -23,14 +23,16 @@ $ ping -c 5 www.google.com   # ping 5 times
 
 ### DNS configuration issues
 
-https://stackoverflow.com/questions/53687051/ping-google-com-temporary-failure-in-name-resolution
-https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
+**ping: www.google.com: Temporary failure in name resolution**
+
+* https://stackoverflow.com/questions/53687051/ping-google-com-temporary-failure-in-name-resolution
+* https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
  
-On modern Linux systems that use systemd (system and service manager), the DNS or name resolution services are provided to local applications via the systemd-resolved service. 
-It uses the systemd DNS stub file (**/run/systemd/resolve/stub-resolv.conf**) in the default mode of operation.
-The DNS stub file contains the local stub **127.0.0.53** as the only DNS server.
-
-```ls -l /etc/resolv.conf``` - you will see that this file is a symlink to the /run/systemd/resolve/stub-resolv.conf file.
-Unfortunately, because the /etc/resolv.conf is indirectly managed by the systemd-resolved service, any changes made manually by a user can not be saved permanently or only last for a while.
-
-Quick fix - just to modify the **/etc/resolv.conf** to 8.8.8.8
+    On modern Linux systems that use systemd (system and service manager), the DNS or name resolution services are provided to local applications via the systemd-resolved service. 
+    It uses the systemd DNS stub file (**/run/systemd/resolve/stub-resolv.conf**) in the default mode of operation.
+    The DNS stub file contains the local stub **127.0.0.53** as the only DNS server.
+    
+    ```ls -l /etc/resolv.conf``` - you will see that this file is a symlink to the /run/systemd/resolve/stub-resolv.conf file.
+    Unfortunately, because the /etc/resolv.conf is indirectly managed by the systemd-resolved service, any changes made manually by a user can not be saved permanently or only last for a while.
+    
+    Quick fix - just to modify the **/etc/resolv.conf** to 8.8.8.8

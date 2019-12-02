@@ -2,6 +2,7 @@
 ### Common commands
 ```sh
 $ hostname                   # show or set system's hostname
+$  history | grep netstat    # search the command  history
 $ cd -                       # navigate to previous directory
 $ Ctrl + A                   # navigate to start of command
 $ Ctrl + E                   # navigate to the end of command
@@ -18,6 +19,7 @@ su -                         # switch to root user
 ```sh
 $ ifconfig                   # configure/view network interfaces
 $ ping -c 5 www.google.com   # ping 5 times
+$ arp                        # manipulate the system ARP cache
 ```
 
 
@@ -36,3 +38,21 @@ $ ping -c 5 www.google.com   # ping 5 times
     Unfortunately, because the /etc/resolv.conf is indirectly managed by the systemd-resolved service, any changes made manually by a user can not be saved permanently or only last for a while.
     
     Quick fix - just to modify the **/etc/resolv.conf** to 8.8.8.8
+
+
+
+## Open VPN server
+Install and configure 
+* https://interface31.ru/tech_it/2019/10/nastroyka-openvpn-servera-dlya-dostupa-v-internet.html  (russian)
+
+**restart**
+```
+sudo systemctl stop openvpn@server
+sudo systemctl enable openvpn@server.service
+sudo systemctl start openvpn@server
+```
+
+
+## Start a python2 web server
+
+ ``` python -m SimpleHTTPServer 80```

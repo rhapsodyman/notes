@@ -63,14 +63,15 @@ sudo systemctl start openvpn@server
  * **Finding subdomains** - Google Fu, dig, Nmap, Sublist3r, Bluto, crt/sh, etc
  * **Fingerprinting** - nmap, Wappalyzer, BuiltWith, Netcat
  * **Data Breaches** - HaveIBeenPwned and similar
+ * **Also** - Nikto, Nessus, Burp Suite, dirbuster
 
-### nmap
+### nmap (press UP key to see the status)
 * **TCP**  - SYN - SYN ACK - ACK 
 * **nmap** -  SYN - SYN ACK - RST
 1. **nmap "ping scan"** - ``` nmap -sn 10.0.2.0/24```  show all the nodes in a network
 2. ```nmap -T4 10.0.2.2``` - top 1000 widely used ports scanned 
 3. ```nmap -T4 -p-``` - all ports scanned 
 4. ```nmap -T4 -p22,80,443``` - selective ports scanned (can add here ```-A``` for more info)
-5. ```/usr/share/nmap/scripts``` - namp usefull scripts
+5. ```/usr/share/nmap/scripts``` - namp usefull scripts (example  ```nmap -p443 --script=ssl-enum-ciphers utm.md```)
 
 

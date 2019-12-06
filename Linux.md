@@ -73,7 +73,7 @@ sudo systemctl start openvpn@server
  
  ## Pen Testing
  * **Target validation** - WHOIS, nslookup, dnsrecon
- * **Finding subdomains** - Google Fu, dig, Nmap, Sublist3r, Bluto, crt/sh, etc
+ * **Finding subdomains** - Google Fu, dig, Nmap, Sublist3r, Bluto, crt.sh, etc
  * **Fingerprinting** - nmap, Wappalyzer, BuiltWith, Netcat
  * **Data Breaches** - HaveIBeenPwned and similar
  * **Also** - Nikto, Nessus, Burp Suite, dirbuster

@@ -82,9 +82,10 @@ sudo systemctl start openvpn@server
 * **TCP**  - SYN - SYN ACK - ACK 
 * **nmap** -  SYN - SYN ACK - RST
 1. **nmap "ping scan"** - ``` nmap -sn 10.0.2.0/24```  show all the nodes in a network
-2. ```nmap -T4 10.0.2.2``` - top 1000 widely used ports scanned 
-3. ```nmap -T4 -p-``` - all ports scanned 
-4. ```nmap -T4 -p22,80,443``` - selective ports scanned (can add here ```-A``` for more info)
-5. ```/usr/share/nmap/scripts``` - namp usefull scripts (example  ```nmap -p443 --script=ssl-enum-ciphers utm.md```)
+2. ```nmap -T4 <host>``` - top 1000 widely used ports scanned 
+3. ```nmap -T4 -p- <host>``` - all ports scanned 
+4. ```nmap -sC -sV -oA output <host>``` - this seems faster 
+5. ```nmap -T4 -p22,80,443 <host>``` - selective ports scanned (can add here ```-A``` for more info)
+6. ```/usr/share/nmap/scripts``` - namp usefull scripts (example  ```nmap -p443 --script=ssl-enum-ciphers utm.md```)
 
 

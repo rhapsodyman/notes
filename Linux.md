@@ -80,7 +80,8 @@ sudo systemctl start openvpn@server
  * **Finding subdomains** - Google Fu, dig, Nmap, Sublist3r, Bluto, crt.sh, etc
  * **Fingerprinting** - nmap, Wappalyzer, BuiltWith, Netcat
  * **Data Breaches** - HaveIBeenPwned and similar
- * **Also** - Nikto, Nessus, Burp Suite, dirbuster
+ * **Also** - Nikto, Nessus, Burp Suite, dirbuster, searchsploit, metasploit, 
+ * parsing leaked credentials - https://github.com/hmaverickadams/breach-parse
 
 ### nmap (press UP key to see the status)
 * **TCP**  - SYN - SYN ACK - ACK 
@@ -90,6 +91,6 @@ sudo systemctl start openvpn@server
 3. ```nmap -T4 -p- <host>``` - all ports scanned 
 4. ```nmap -sC -sV -oA output <host>``` - this seems faster 
 5. ```nmap -T4 -p22,80,443 <host>``` - selective ports scanned (can add here ```-A``` for more info)
-6. ```/usr/share/nmap/scripts``` - namp usefull scripts (example  ```nmap -p443 --script=ssl-enum-ciphers utm.md```)
+6. ```/usr/share/nmap/scripts``` - nmap usefull scripts (example  ```nmap -p443 --script=ssl-enum-ciphers utm.md```)
 
 

@@ -16,6 +16,37 @@ tar -xvf file.tar            # extract file
 ```
 
 
+
+### SSH Port Forwarding
+
+**Local port forwarding:** lets you connect from your local computer to another server.
+* **Example1**: you need to connect from your company computer to your home computer,
+but the RDP port (3389) is blocked by company firewall 
+on the WORK:   ```ssh -L 8181:<home_ip>:3389  <home_ssh_user>@<home_ip>```
+then - access RDP connection with localhost:8181 (from WORK)
+
+
+**Reverse Port Forwarding**: Remote port forwarding lets you connect from the remote SSH server to another server.
+you need to connect from your home computer to your  company computer,
+on the WORK:   ```ssh -R 8181:localhost:3389  <home_ssh_user>@<home_ip>```
+then - access RDP connection with localhost:8181  (from HOME)
+
+Good explanation (from https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work)
+* **local: -L Specifies that the given port on the local (client) host is to be forwarded to the given host and port on the remote side.**
+```ssh -L sourcePort:forwardToHost:onPort connectToHost``` means: connect with ssh to ```connectToHost```, and forward all connection attempts to the **local** ```sourcePort``` to port ```onPort``` on the machine called ```forwardToHost```, which can be reached from the ```connectToHost``` machine.
+
+
+* **remote: -R Specifies that the given port on the remote (server) host is to be forwarded to the given host and port on the local side.**
+```ssh -R sourcePort:forwardToHost:onPort connectToHost``` means: connect with ssh to ```connectToHost```, and forward all connection attempts to the **remote** ```sourcePort``` to port ```onPort``` on the machine called ```forwardToHost```, which can be reached from your local machine.
+
+
+**Dynamic Port forwarding**: Dynamic port forwarding turns your SSH client into a SOCKS proxy server.
+* **Example1**: on the work machine there is a filter on the port 80 
+```ssh -D 8181 <home_ssh_user>@<home_ip>```
+the will need to change Chrome setings to point to the created proxy
+
+
+
 ### Network commands
 ```sh
 $ ifconfig                   # configure/view network interfaces

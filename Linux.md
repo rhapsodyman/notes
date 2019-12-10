@@ -52,6 +52,7 @@ the will need to change Chrome setings to point to the created proxy
 $ ifconfig                   # configure/view network interfaces
 $ ping -c 5 www.google.com   # ping 5 times
 $ arp                        # manipulate the system ARP cache
+$ iptables -L -vn            # list iptables rules
 ```
 
 

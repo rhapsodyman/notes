@@ -17,6 +17,16 @@ tar -xvf file.tar            # extract file
 
 
 
+### Network commands
+```sh
+$ ifconfig                   # configure/view network interfaces
+$ ping -c 5 www.google.com   # ping 5 times
+$ arp                        # manipulate the system ARP cache
+$ iptables -L -vn            # list iptables rules
+$ kill $(lsof -t -i:8080)    # kill any process listening to the port 8080
+```
+
+
 ### SSH Port Forwarding
 
 **Local port forwarding:** lets you connect from your local computer to another server.
@@ -27,7 +37,7 @@ then - access RDP connection with localhost:8181 (from WORK)
 
 
 **Reverse Port Forwarding**: Remote port forwarding lets you connect from the remote SSH server to another server.
-you need to connect from your home computer to your  company computer,
+* **Example1**: you need to connect from your home computer to your  company computer
 on the WORK:   ```ssh -R 8181:localhost:3389  <home_ssh_user>@<home_ip>```
 then - access RDP connection with localhost:8181  (from HOME)
 
@@ -44,16 +54,6 @@ Good explanation (from https://unix.stackexchange.com/questions/46235/how-does-r
 * **Example1**: on the work machine there is a filter on the port 80 
 ```ssh -D 8181 <home_ssh_user>@<home_ip>```
 the will need to change Chrome setings to point to the created proxy
-
-
-
-### Network commands
-```sh
-$ ifconfig                   # configure/view network interfaces
-$ ping -c 5 www.google.com   # ping 5 times
-$ arp                        # manipulate the system ARP cache
-$ iptables -L -vn            # list iptables rules
-```
 
 
 ### Magic bytes

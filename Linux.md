@@ -55,6 +55,12 @@ Good explanation (from https://unix.stackexchange.com/questions/46235/how-does-r
 ```ssh -D 8181 <home_ssh_user>@<home_ip>```
 the will need to change Chrome setings to point to the created proxy
 
+**Settings:**
+/etc/ssh/sshd_config file
+```
+AllowTCPForwarding  yes
+GatewayPorts  yes
+```
 
 ### Magic bytes
 * https://blog.netspi.com/magic-bytes-identifying-common-file-formats-at-a-glance/
